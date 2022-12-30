@@ -10,6 +10,8 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 dotenv.config();
 
+const authRouter = require("./routes/api/auth");
+
 const contactsRouter = require("./routes/api/contacts");
 
 const app = express();
@@ -21,6 +23,7 @@ app.use(cors());
 app.use(express.json()); // перевіряє Content-Type,тіло парсить як обєкт
 
 app.use("/api/contacts", contactsRouter); // якщо запит поч. з 'api/contacts', шукай обробників маршрутів тут contactsRouter
+app.use("/api/auth", authRouter);
 
 // обробка помилок
 app.use((req, res) => {
