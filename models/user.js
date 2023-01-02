@@ -2,8 +2,8 @@ const { model, Schema } = require("mongoose");
 
 const Joi = require("joi");
 
-const emailRegexp = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
-
+const emailRegexp =
+  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const userSchema = Schema(
   {
     password: {
@@ -13,7 +13,6 @@ const userSchema = Schema(
     },
     email: {
       type: String,
-      // match: emailRegexp,
       required: [true, "Email is required"],
       unique: true,
     },

@@ -1,8 +1,8 @@
 const express = require("express");
 const { auth } = require("../../middlewares");
-const ctrl = require("../../controllers/contacts"); // обєкт з ф-ями контроллерами
+const ctrl = require("../../controllers/contacts");
 const { ctrlWrapper } = require("../../helpers");
-const router = express.Router(); // обєкт з описом маршрутів
+const router = express.Router();
 
 router.get("/", auth, ctrlWrapper(ctrl.getAll));
 

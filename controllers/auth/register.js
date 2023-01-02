@@ -5,8 +5,7 @@ const { createError } = require("../../helpers");
 const register = async (req, res) => {
   const { error } = schemas.register.validate(req.body);
   if (error) {
-    // throw createError(400, error.message);
-    throw createError(400, `Ошибка от Joi или другой библиотеки валидации`);
+    throw createError(400, error.message);
   }
 
   const { email, password } = req.body;
