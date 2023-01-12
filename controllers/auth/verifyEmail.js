@@ -9,8 +9,8 @@ const verifyEmail = async (req, res) => {
   }
 
   await User.findByIdAndUpdate(user._id, {
-    verificationToken: null,
     verify: true,
+    verificationToken: "",
   });
 
   res.json({
