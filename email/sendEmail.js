@@ -22,9 +22,9 @@ module.exports = sendEmail;
 // const email = {
 //   to: "kaleniukbogdan@ukr.net",
 //   from: "bogdankaleniuk@meta.ua",
-//   subject: "Sending with Twilio SendGrid is Fun",
+//   subject: "New order",
 //   text: "and easy to do anywhere, even with Node.js",
-//   html: "<strong>and easy to do anywhere, even with Node.js</strong>",
+//   html: "<p>Get new order</p>",
 // };
 
 // sgMail
